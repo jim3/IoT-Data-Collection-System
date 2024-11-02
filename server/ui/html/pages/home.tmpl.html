@@ -1,0 +1,26 @@
+{{define "title"}}Home{{end}}
+
+{{define "main"}}
+    <h2>BME680 Sensor Data</h2>
+    <p>Temperature: <span id="temperature">{{.Temperature}}</span></p>
+    <p>Humidity: <span id="humidity">{{.Humidity}}</span></p>
+    <p>Pressure: <span id="pressure">{{.Pressure}}</span></p>
+    <p>Altitude: <span id="altitude">{{.Altitude}}</span></p>
+
+    <script>
+        function fetchSensorData() {
+            fetch('/api/v1/sensors/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("temperature").innerText = data.Temperature;
+                    document.getElementById("humidity").innerText = data.Humidity;
+                    document.getElementById("pressure").innerText = data.Pressure;
+                    document.getElementById("altitude").innerText = data.Altitude;
+                })
+                .catch(error => console.error('Error fetching sensor data:', error));
+        }
+
+        setInterval(fetchSensorData, 1000);
+        fetchSensorData();
+    </script>
+{{end}}
