@@ -12,7 +12,6 @@ import (
 
 const url string = "https://jim3.xyz/api/v1/sensors"
 
-// Changed from getPortsList to GetPortsList
 func GetPortsList() {
 	ports, err := serial.GetPortsList()
 	if err != nil {
@@ -26,7 +25,6 @@ func GetPortsList() {
 	}
 }
 
-// Changed from serialPortConfig to SerialPortConfig
 func SerialPortConfig(portName string, mode *serial.Mode) {
 	port, err := serial.Open(portName, mode)
 	if err != nil {
@@ -59,7 +57,6 @@ func SerialPortConfig(portName string, mode *serial.Mode) {
 	}
 }
 
-// HTTP POST request
 func HttpPostRequest(data string) {
 	resp, err := http.Post(url, "application/octet-stream", bytes.NewBufferString(data))
 	if err != nil {
