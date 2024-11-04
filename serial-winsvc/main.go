@@ -59,53 +59,6 @@ func SerialPortConfig(portName string, mode *serial.Mode) {
 	}
 }
 
-// // Retrieve the port list and print the available ports
-// func GetPortsList() {
-// 	ports, err := serial.GetPortsList()
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	if len(ports) == 0 {
-// 		log.Fatal("No serial ports found!")
-// 	}
-// 	for _, port := range ports {
-// 		fmt.Printf("Found port: %v\n", port)
-// 	}
-// }
-
-// // Serial port configuration and data processing
-// func SerialPortConfig(portName string, mode *serial.Mode) {
-// 	port, err := serial.Open(portName, mode)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer port.Close()
-
-// 	buff := make([]byte, 100)
-// 	var dataBuffer bytes.Buffer
-
-// 	for {
-// 		n, err := port.Read(buff)
-// 		if err != nil {
-// 			log.Fatal(err)
-// 			break
-// 		}
-// 		if n == 0 {
-// 			fmt.Println("\nEOF")
-// 			break
-// 		}
-
-// 		dataBuffer.Write(buff[:n])
-
-// 		data := dataBuffer.String()
-// 		if data[len(data)-1] == '\n' {
-// 			fmt.Println("Complete set of sensor values =>", data)
-// 			HttpPostRequest(data)
-// 			dataBuffer.Reset()
-// 		}
-// 	}
-// }
-
 // HTTP POST request
 func HttpPostRequest(data string) {
 	resp, err := http.Post(url, "application/octet-stream", bytes.NewBufferString(data))
