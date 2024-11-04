@@ -11,7 +11,7 @@ and here [Micropython Driver](https://github.com/robert-hh/BME680-Micropython) O
 
 - Server-side [Go](https://go.dev) uses Linux. It listens for incoming connections (sensor data), processes it, and sends it to a client to display the IoT data in real-time.
 
-A demo of this lives at https://jim3.xyz
+A demo of this lives at https://jim3.xyz (I unplug the microcontroller at night but otherwise I try to keep it running)
 
 ---
 
@@ -30,4 +30,4 @@ A demo of this lives at https://jim3.xyz
 
 ### To Do
 
-I'll try and make the README.md more detailed and add more information about the project but after teh amount of time this took I'm just happy it works. 😅😅😅
+Add more details to the README.md...but after the amount of time this took I'm just happy it just works. 😅😅😅
