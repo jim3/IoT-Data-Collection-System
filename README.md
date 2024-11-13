@@ -30,4 +30,4 @@ A demo of this lives at https://jim3.xyz (I unplug the microcontroller at night 
 
 ### To Do
 
-Add more details to the README.md...but after the amount of time this took I'm just happy it just works. 😅😅😅
+`...`
